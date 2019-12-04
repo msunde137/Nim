@@ -16,8 +16,11 @@ class TextBox:
     def set_text(self, string):
         self.text = string
 
-    # what to do with every tick
     def update(self):
+        pass
+
+    # what to render with every tick
+    def render(self):
         # Render the current text.
         self.txt_surface = self.font.render(self.text, True, self.color)
         # Blit the text.
@@ -27,11 +30,12 @@ class TextBox:
 
 
 class MutableTextBox(TextBox):
-    def __init__(self, location, rectangle, inactive_color, active_color):
+    def __init__(self, location, rectangle, inactive_color, active_color, default_length=10):
         super().__init__(location, rectangle, "", inactive_color)
 
         self.color_inactive = inactive_color  # what color to be when not selected
         self.color_active = active_color  # what color to be when selected
+        self.default_length = default_length
         self.active = False  # selected or not?
 
     # do this when clicked
@@ -40,9 +44,9 @@ class MutableTextBox(TextBox):
             # If the user clicked on the input_box rect.
             if self.rectangle.collidepoint(event.pos):
                 # Toggle the active variable.
-                self.active = not self.active
+                self.active = True
             else:
-                active = False
+                self.active = False
             # Change the current color of the input box.
             self.color = self.color_active if self.active else self.color_inactive
 
@@ -62,5 +66,38 @@ class MutableTextBox(TextBox):
     def update(self):
         super().update()
         # Resize the box if the text is too long.
-        width = max(200, self.txt_surface.get_width() + 10)
+        width = max(self.default_length, self.txt_surface.get_width() + 10)
         self.rectangle.w = width
+
+
+class Button(TextBox):
+    def __init__(self, location, rectangle, neutral_color, hover_color, select_color, text=""):
+        super().__init__(location, rectangle, text, neutral_color)
+        self.neutral_color = neutral_color
+        self.hover_color = hover_color
+        self.select_color = select_color
+
+        self.color = neutral_color
+        self.pushed = False
+
+    def update(self):
+        mouse = pg.mouse.get_pos()
+
+        if self.rectangle.left + self.rectangle.w > mouse[0] > self.rectangle.h and \
+                self.rectangle.top + self.rectangle.h > mouse[1] > self.rectangle.top:
+            self.color = self.hover_color
+        else:
+            self.color = self.neutral_color
+
+    def render(self):
+        super().render()
+
+    def selected(self, event):
+        if event.type == pg.MOUSEBUTTONDOWN:
+            # If the user clicked on the input_box rect.
+            if self.rectangle.collidepoint(event.pos):
+                # select the button
+                self.color = self.select_color
+                self.pushed = True
+                print("button is pushed")
+
