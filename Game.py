@@ -1,33 +1,36 @@
 import pygame
+import TextBox
 
-pygame.init()
-screen = pygame.display.set_mode((400, 300))
-done = False
-is_blue = True
-x = 30
-y = 30
 
-clock = pygame.time.Clock()
+def main():
+    screen = pygame.display.set_mode((400, 300))
+    done = False
 
-while not done:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            done = True
-        if event.type == pygame.KEYDOWN and event.key == pygame.K_SPACE:
-            is_blue = not is_blue
+    text_box = TextBox.TextBox(screen, pygame.Rect(50, 50, 50, 32), "Nim", pygame.Color("dodgerblue2"))
 
-    pressed = pygame.key.get_pressed()
-    if pressed[pygame.K_UP]: y -= 3
-    if pressed[pygame.K_DOWN]: y += 3
-    if pressed[pygame.K_LEFT]: x -= 3
-    if pressed[pygame.K_RIGHT]: x += 3
+    input_box = pygame.Rect(100, 100, 140, 32)
+    color_inactive = pygame.Color('lightskyblue3')
+    color_active = pygame.Color('dodgerblue2')
+    input_text_box = TextBox.MutableTextBox(screen, input_box, color_inactive, color_active)
 
-    screen.fill((0, 0, 0))
-    if is_blue:
-        color = (0, 128, 255)
-    else:
-        color = (255, 100, 0)
-    pygame.draw.rect(screen, color, pygame.Rect(x, y, 60, 60))
+    clock = pygame.time.Clock()
 
-    pygame.display.flip()
-    clock.tick(60)
+    while not done:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                done = True
+            input_text_box.clicked(event)
+            input_text_box.returned(event)
+
+        screen.fill((30, 30, 30))
+
+        text_box.update()
+        input_text_box.update()
+        pygame.display.flip()
+        clock.tick(60)
+
+
+if __name__ == "__main__":
+    pygame.init()
+    main()
+    pygame.quit()
