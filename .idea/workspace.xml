@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6061a8-c603-4e79-b5a7-8de73a460155" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/GameFiles/Button.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/GameFiles/Scene.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SceneTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TextBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/TextBox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameBoards.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/GameBoards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFiles/Button.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFiles/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/Game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFiles/Scene.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/Scene.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameFiles/TextBox.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameFiles/TextBox.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/GameInput.py" beforeDir="false" afterPath="$PROJECT_DIR$/GameInput.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +52,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.Game">
+    <configuration name="Game (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Nim" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/GameFiles" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GameFiles/Game.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Game" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Nim" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -70,7 +94,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="GameInput" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="SceneTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Nim" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,28 +106,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GameInput.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="GameText" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Nim" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/GameText.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SceneTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -157,10 +160,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.Game" />
+        <item itemvalue="Python.Game (1)" />
+        <item itemvalue="Python.SceneTest" />
         <item itemvalue="Python.TextBox" />
         <item itemvalue="Python.TextInput" />
-        <item itemvalue="Python.GameInput" />
-        <item itemvalue="Python.GameText" />
       </list>
     </recent_temporary>
   </component>
@@ -189,5 +192,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/GameFiles/Game.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

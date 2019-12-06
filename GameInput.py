@@ -88,4 +88,33 @@ def drawLineBetween(screen, index, start, end, width, color_mode):
         pygame.draw.circle(screen, color, (x, y), width)
 
 
-main()
+
+def main():
+    pg.init()
+    screen = pg.display.set_mode((400, 300))
+    done = False
+
+    font = pg.font.SysFont("timesnewroman", 25)
+
+    text_box = tb.TextBox(pg.Rect(50, 50, 50, 32), "Nim", pg.Color("dodgerblue2"), font)
+
+    input_box = pg.Rect(100, 100, 140, 32)
+    color_inactive = pg.Color('lightskyblue3')
+    color_active = pg.Color('dodgerblue2')
+    button = tb.Button(input_box, color_inactive, color_active, font, "Press Me")
+
+    clock = pg.time.Clock()
+
+    while not done:
+        for event in pg.event.get():
+            if event.type == pg.QUIT:
+                done = True
+            button.selected(event)
+
+        screen.fill((30, 30, 30))
+
+        button.update()
+        button.render(screen)
+
+        pg.display.flip()
+        clock.tick(60)
