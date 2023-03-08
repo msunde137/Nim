@@ -6,6 +6,8 @@ This game requires [Python](https://Python.org), [PyGame](https://www.pygame.org
 
 To play the game, download the project files and run using the terminal command ```python Game.py```
 
+## About
+
   We will be examining the classic game Nim and how it can be implemented in Python. This will include a user interface to play 
 these games. 
 
