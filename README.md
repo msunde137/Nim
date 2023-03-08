@@ -4,7 +4,7 @@
 
 This game requires [Python](https://Python.org), [PyGame](https://www.pygame.org/), and [NumPy](https://numpy.org/).
 
-To play the game, download the project files and run using the terminal command ```python Game.py```
+To play the game, download the project files and run using the terminal command ```python Game.py``` inside the game folder.
 
 ## About
 
